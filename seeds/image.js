@@ -5,16 +5,14 @@ exports.seed = function(knex, Promise) {
             // Inserts seed entries
             return knex('image').insert([{
                     id: 1,
-                    house_id: 1,
-                    data
+                    house_id: 1
                 }, {
                     id: 2,
-                    house_id: 2,
-                    data
+                    house_id: 2
+
                 }, {
                     id: 3,
-                    house_id: 3,
-                    data
+                    house_id: 3
                 }
             ]);
         })
