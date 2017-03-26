@@ -30,11 +30,23 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
-    database.createImage(req.body)
-        .then(() => {
-            res.sendStatus(201)
-        })
+router.post('/', upload.single('image'),  (req, res) => {
+    // database.createImage(req.body)
+    //     .then(() => {
+    //         res.sendStatus(201)
+    //     })
+    let id = uuid()
+    s3.putObject({
+      Bucket: process.env.S3_BUCKET,
+      Key: id,
+      Body: new Buffer(req.file.buffer)
+    }, err => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(`{"success": true}`)
+      }
+    })
 })
 
 router.patch('/:id', (req, res) => {
