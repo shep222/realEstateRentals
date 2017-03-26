@@ -1,11 +1,27 @@
 const router = require('express').Router()
 const database = require('../database/imageAPI')
+const upload = require('multer')()
+const AWS = require('aws-sdk')
+const uuid = require('uuid/v4')
+
+AWS.config.update({accessKeyId: process.env.S3_KEY, secretAccessKey: process.env.S3_SECRET})
+const s3 = new AWS.S3()
+
+
+
 
 router.get('/', (req, res) => {
-    database.getImage()
-        .then((tenant) => {
-            res.send(tenant)
-        })
+    // database.getImage()
+    //     .then((tenant) => {
+    //         res.send(tenant)
+    //     })
+    s3.listObjects({Bucket: process.env.S3_BUCKET}, (err, resp) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json({resp})
+      }
+    })
 })
 
 router.get('/:id', (req, res) => {
