@@ -4,6 +4,11 @@ exports.up = (knex) => {
         house.integer('bedrooms')
         house.integer('baths')
         house.varchar('available')
+        house.varchar('address')
+        house.varchar('city')
+        house.varchar('state')
+        house.integer('zipcode')
+        house.varchar('description')
     });
 }
 exports.down = (knex) => {
