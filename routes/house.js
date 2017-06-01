@@ -33,8 +33,8 @@ router.post('/', upload.single('image'),  (req, res) => {
               if (err) {
                 console.log(err);
               } else {
-                // res.json(`{"success": true}`)
-                res.json(data);
+                res.json(`{"success": true}`)
+                // res.json(data);
                 console.log('made it');
               }
             })
