@@ -38,7 +38,9 @@ router.post('/', upload.single('image'),  (req, res) => {
             let id = uuid()
             let myDate = new Date()
             myDate = myDate.toLocaleTimeString()
+            console.log(req.files);
             s3.putObject({
+
               Bucket: process.env.S3_BUCKET,
               Key: myDate,
               Body: new Buffer(req.file.buffer)
