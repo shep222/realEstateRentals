@@ -48,11 +48,12 @@ router.post('/', upload.single('image'),  (req, res) => {
       Bucket: process.env.S3_BUCKET,
       Key: myDate,
       Body: new Buffer(req.file.buffer)
-    }, err => {
+  }, (err,data) => {
       if (err) {
         console.log(err);
       } else {
-        res.json(`{"success": true}`)
+        // res.json(`{"success": true}`)
+        res.json(data);
         console.log('made it');
       }
     })
