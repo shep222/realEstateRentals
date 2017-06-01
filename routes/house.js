@@ -40,7 +40,6 @@ router.post('/', upload.single('image'),  (req, res) => {
             myDate = myDate.toLocaleTimeString()
             console.log(req.files);
             s3.putObject({
-
               Bucket: process.env.S3_BUCKET,
               Key: myDate,
               Body: new Buffer(req.file.buffer)
@@ -52,6 +51,9 @@ router.post('/', upload.single('image'),  (req, res) => {
                 // res.json(data);
                 console.log('made it');
               }
+            })
+            .catch(err => {
+                console.log(err);
             })
         })
 })
