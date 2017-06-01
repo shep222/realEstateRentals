@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const database = require('../database/houseAPI')
+const upload = require('multer')()
+
 
 router.get('/', (req, res) => {
     database.getHouse()
@@ -14,24 +16,20 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
+router.post('/', upload.single('house'),  (req, res) => {
     database.createHouse(req.body)
         .then(() => {
             res.sendStatus(201)
         })
-})
-
-router.patch('/:id', (req, res) => {
-    database.editHouse(req.params.id, req.body).then((id) => {
-        res.json(id)
-    })
-})
-
-router.delete('/:id', (req, res) => {
-    database.deleteHouse(req.params.id).then((id) => {
-        res.json(id)
-    })
-})
-
-
+        .then(()=> {
+            let id = uuid()
+            let myDate = new Date()
+            myDate = myDate.toLocaleTimeString()
+            s3.putObject({
+              Bucket: process.env.S3_BUCKET,
+              Key: id,
+              Body: new Buffer(req.file.buffer)
+          }, (err,data) => {
+              if (err) {
+                console.log(err);
 module.exports = router
