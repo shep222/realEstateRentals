@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const database = require('../database/houseAPI')
-const upload = require('multer')({
+const multer = require('multer')
+const upload = multer({
     storage: multer.memoryStorage(),
     limits: {
       fieldNameSize: 255,
