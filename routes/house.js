@@ -11,6 +11,9 @@ const upload = multer({
     }
   });
 const uuid = require('uuid/v4')
+const AWS = require('aws-sdk')
+AWS.config.update({accessKeyId: process.env.S3_KEY, secretAccessKey: process.env.S3_SECRET})
+const s3 = new AWS.S3()
 
 router.get('/', (req, res) => {
     database.getHouse()
