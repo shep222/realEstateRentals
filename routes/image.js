@@ -41,22 +41,7 @@ router.post('/', upload.single('image'),  (req, res) => {
     //     .then(() => {
     //         res.sendStatus(201)
     //
-    let id = uuid()
-    let myDate = new Date()
-    myDate = myDate.toLocaleTimeString()
-    s3.putObject({
-      Bucket: process.env.S3_BUCKET,
-      Key: myDate,
-      Body: new Buffer(req.file.buffer)
-  }, (err,data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        // res.json(`{"success": true}`)
-        res.json(data);
-        console.log('made it');
-      }
-    })
+    
 })
 
 router.patch('/:id', (req, res) => {
