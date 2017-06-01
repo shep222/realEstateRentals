@@ -10,18 +10,24 @@ const s3 = new AWS.S3()
 
 
 
+// router.get('/', (req, res) => {
+//     // database.getImage()
+//     //     .then((tenant) => {
+//     //         res.send(tenant)
+//     //     })
+//     s3.listObjects({Bucket: process.env.S3_BUCKET}, (err, resp) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         res.json({resp})
+//       }
+//     })
+// })
 router.get('/', (req, res) => {
-    // database.getImage()
-    //     .then((tenant) => {
-    //         res.send(tenant)
-    //     })
-    s3.listObjects({Bucket: process.env.S3_BUCKET}, (err, resp) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.json({resp})
-      }
-    })
+    database.getImage()
+        .then((image) => {
+            res.send(image)
+        })
 })
 
 router.get('/:id', (req, res) => {
@@ -35,10 +41,9 @@ router.post('/', upload.single('image'),  (req, res) => {
     //     .then(() => {
     //         res.sendStatus(201)
     //
-    console.log('HERE');
     let id = uuid()
     let myDate = new Date()
-    myDate = myDate.toLocaleTimeString()
+    // myDate = myDate.toLocaleTimeString()
     s3.putObject({
       Bucket: process.env.S3_BUCKET,
       Key: myDate,
@@ -48,7 +53,7 @@ router.post('/', upload.single('image'),  (req, res) => {
         console.log(err);
       } else {
         res.json(`{"success": true}`)
-        console.log();
+        console.log('made it');
       }
     })
 })
