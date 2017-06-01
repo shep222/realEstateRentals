@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
             }
         ]);
     })
-    // .then(function () {
-    //   return knex.raw('alter sequence recipe_id_seq restart with 3')
-    // })
+    .then(function () {
+      return knex.raw('alter sequence image_id_seq restart with 8')
+    })
 };
