@@ -9,6 +9,7 @@ const image = require('./routes/image')
 
 
 app.use(cors())
+app.use(express.limit('5mb'));
 // app.use(cors({origin: 'https://realestate-767c2.firebaseapp.com/'}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
