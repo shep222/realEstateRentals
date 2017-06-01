@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const database = require('../database/houseAPI')
 const upload = require('multer')()
+const uuid = require('uuid/v4')
 
 router.get('/', (req, res) => {
     database.getHouse()
