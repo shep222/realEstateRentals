@@ -16,7 +16,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', upload.single('house'),  (req, res) => {
+router.post('/', upload.single('image'),  (req, res) => {
     database.createHouse(req.body)
         .then(() => {
             res.sendStatus(201)
