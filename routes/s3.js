@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const database = require('../database/imageAPI')
+const database = require('../database/s3API')
 const multer = require('multer')
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    database.getSingleImage(req.params.id).then((tenant) => {
+    database.getS3SingleImage(req.params.id).then((tenant) => {
         res.send(tenant)
     })
 })
@@ -63,13 +63,13 @@ router.post('/', upload.single('s3'),  (req, res) => {
 })
 
 router.patch('/:id', (req, res) => {
-    database.editImage(req.params.id, req.body).then((id) => {
+    database.editS3Image(req.params.id, req.body).then((id) => {
         res.json(id)
     })
 })
 
 router.delete('/:id', (req, res) => {
-    database.deleteImage(req.params.id).then((id) => {
+    database.deleteS3Image(req.params.id).then((id) => {
         res.json(id)
     })
 })

@@ -5,6 +5,7 @@ const app = express()
 const PORT = process.env.PORT || 6666
 const cors = require('cors')
 const house = require('./routes/house')
+const s3 = require('./routes/s3')
 const image = require('./routes/image')
 
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use('/house', house)
 app.use('/image', image)
+app.use('/s3', s3)
 
 
 
