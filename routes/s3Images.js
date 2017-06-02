@@ -39,12 +39,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', upload.single('s3'),  (req, res) => {
-    // database.createImage(req.body)
-    //     .then(() => {
-    //         res.sendStatus(201)
-    //
-    console.log('HERE');
+router.post('/', upload.single('image'),  (req, res) => {
     let id = uuid()
     let myDate = new Date()
     myDate = myDate.toLocaleTimeString()
