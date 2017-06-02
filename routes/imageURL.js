@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const database = require('../database/imageAPI')
+const database = require('../database/imageURLAPI')
 
 router.get('/', (req, res) => {
     database.getImage()
