@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const database = require('../database/s3API')
+const database = require('../database/imageAPI')
 const multer = require('multer')
 const upload = multer({
     storage: multer.memoryStorage(),
