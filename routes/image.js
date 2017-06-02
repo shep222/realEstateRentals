@@ -1,6 +1,15 @@
 const router = require('express').Router()
 const database = require('../database/imageAPI')
-const upload = require('multer')()
+const multer = require('multer')
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+      fieldNameSize: 255,
+      fileSize: 500000,
+      files: 1,
+      fields: 1
+    }
+  });
 const AWS = require('aws-sdk')
 const uuid = require('uuid/v4')
 
