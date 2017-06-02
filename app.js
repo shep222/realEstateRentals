@@ -5,8 +5,8 @@ const app = express()
 const PORT = process.env.PORT || 6666
 const cors = require('cors')
 const house = require('./routes/house')
-const imagesURL= require('./routes/imageURL')
 const image = require('./routes/image')
+const imageURL= require('./routes/imageURL')
 
 
 app.use(cors())
