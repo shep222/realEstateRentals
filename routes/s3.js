@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', upload.single('image'),  (req, res) => {
+router.post('/', upload.single('s3'),  (req, res) => {
     // database.createImage(req.body)
     //     .then(() => {
     //         res.sendStatus(201)
