@@ -16,8 +16,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     database.createHouse(req.body)
-        .then(() => {
-            res.sendStatus(201)
+        .then((data) => {
+            res.send(data)
         })
 })
 

@@ -51,7 +51,7 @@ router.post('/', upload.single('image'),  (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.json(`{"success": true}`)
+        res.json(id)
         console.log();
       }
     })
