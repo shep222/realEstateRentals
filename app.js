@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use('/house', house)
 app.use('/image', image)
-app.use('/imageURL', imageURL)
+// app.use('/imageURL', imageURL)
 
 
 
