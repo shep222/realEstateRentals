@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 6666
 const cors = require('cors')
 const house = require('./routes/house')
 const image = require('./routes/image')
-// const imageURL= require('./routes/imageURL')
+const imageURL= require('./routes/imageURL')
 
 
 app.use(cors())
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use('/house', house)
 app.use('/image', image)
-// app.use('/imageURL', imageURL)
+app.use('/imageURL', imageURL)
 
 
 
