@@ -5,7 +5,7 @@ const app = express()
 const PORT = process.env.PORT || 6666
 const cors = require('cors')
 const house = require('./routes/house')
-const s3Images= require('./routes/imageURL')
+// const s3Images= require('./routes/imageURL')
 const image = require('./routes/image')
 
 
