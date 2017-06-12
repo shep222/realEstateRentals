@@ -21,8 +21,8 @@ const s3 = new AWS.S3()
 
 router.get('/', (req, res) => {
     database.getImage()
-        .then((tenant) => {
-            res.send(tenant)
+        .then((image) => {
+            res.send(image)
         })
     // s3.listObjects({Bucket: process.env.S3_BUCKET}, (err, resp) => {
     //   if (err) {
