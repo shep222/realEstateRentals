@@ -12,7 +12,10 @@ exports.seed = function(knex, Promise) {
                     city: 'Mobile',
                     state: 'Alabama',
                     zipcode: 36695,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house1.jpg',
+                    price: 300
+
                 }, {
                     id: 2,
                     bedrooms: 2,
@@ -22,7 +25,9 @@ exports.seed = function(knex, Promise) {
                     city: 'Mobile',
                     state: 'Alabama',
                     zipcode: 36695,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house2.jpg',
+                    price: 400
                 }, {
                     id: 3,
                     bedrooms: 5,
@@ -32,7 +37,9 @@ exports.seed = function(knex, Promise) {
                     city: 'Mobile',
                     state: 'Alabama',
                     zipcode: 36608,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house3.jpg',
+                    price: 500
                 }, {
                     id: 4,
                     bedrooms: 5,
@@ -42,7 +49,9 @@ exports.seed = function(knex, Promise) {
                     city: 'Mobile',
                     state: 'Alabama',
                     zipcode: 36609,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house4.jpg',
+                    price: 550
                 }, {
                     id: 5,
                     bedrooms: 5,
@@ -52,7 +61,9 @@ exports.seed = function(knex, Promise) {
                     city: 'Mobile',
                     state: 'Alabama',
                     zipcode: 36608,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house5.jpg',
+                    price: 600
                 }, {
                     id: 6,
                     bedrooms: 5,
@@ -62,7 +73,9 @@ exports.seed = function(knex, Promise) {
                     city: 'Eight Mile',
                     state: 'Alabama',
                     zipcode: 36571,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house6.png',
+                    price: 700
                 }, {
                     id: 7,
                     bedrooms: 5,
@@ -72,7 +85,9 @@ exports.seed = function(knex, Promise) {
                     city: 'Mobile',
                     state: 'Alabama',
                     zipcode: 36606,
-                    description: 'This house is a beautiful antique on a corner lot'
+                    description: 'This house is a beautiful antique on a corner lot',
+                    mainImg:'https://s3-us-west-1.amazonaws.com/realestate222/house7.jpg',
+                    price: 750
                 }
             ]);
         })
