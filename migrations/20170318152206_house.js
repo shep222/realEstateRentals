@@ -9,7 +9,7 @@ exports.up = (knex) => {
         house.varchar('state')
         house.integer('zipcode')
         house.varchar('description')
-        house.varchar('mainImg')
+        house.varchar('imageURL')
         house.integer('price')
     });
 }
