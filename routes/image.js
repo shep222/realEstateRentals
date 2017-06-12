@@ -20,17 +20,17 @@ const s3 = new AWS.S3()
 
 
 router.get('/', (req, res) => {
-    // database.getImage()
-    //     .then((tenant) => {
-    //         res.send(tenant)
-    //     })
-    s3.listObjects({Bucket: process.env.S3_BUCKET}, (err, resp) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.json({resp})
-      }
-    })
+    database.getImage()
+        .then((tenant) => {
+            res.send(tenant)
+        })
+    // s3.listObjects({Bucket: process.env.S3_BUCKET}, (err, resp) => {
+    //   if (err) {
+    //     console.log(err);
+    //   } else {
+    //     res.json({resp})
+    //   }
+    // })
 })
 
 router.get('/:id', (req, res) => {
